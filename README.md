@@ -24,66 +24,72 @@ Key Achievements in Rideshare Data Analysis Project:
 -  Printed the new schema on console. (Screenshot attached for your reference)
   
 **1.3**
+
 - To convert Unix timestamp to “yyyy-MM-dd” format, I’ve used from_unixtime method from the Pyspark.sql library. This is used to convert unixtime into a string of provided format
 - I did not convert the type from string to date as the only objective of the task is to convert unix time to “yyyy-MM-dd” format.
 
 **Task 2: Aggregation on Data:**
 **2.1**
-• To count the no. of trips for each business in each month we group the data by business and month
-and then count these values.
+• To count the no. of trips for each business in each month we group the data by business and month and then count these values.
 • I used groupby function for grouping.
-• Then, I downloaded this data into a local cluster in csv format using write.option API from pyspark
-dataframe.
+• Then, I downloaded this data into a local cluster in csv format using write.option API from pyspark dataframe.
 • Then, I used this csv file to visualize using Matplotlib.
 • I used Google colab for my visualizations.
+
 **2.2**
+
 • This was to calculate platforms profit for each business each month.
-• To do this we group the data by business and month and then sum the profits using
-rideshare_profit field.
-• Then, I downloaded this data into a local cluster in csv format using write.option API from pyspark
-dataframe.
+• To do this we group the data by business and month and then sum the profits using rideshare_profit field.
+• Then, I downloaded this data into a local cluster in csv format using write.option API from pyspark dataframe.
 • Then, I used this csv file to visualize using Matplotlib.
+
 **2.3**
+
 • This was to calculate drivers earnings for each business in each month.
-• To do this we group the data by business and month and then sum the drivers earnings for each
-group.
-• Then, I downloaded this data into a local cluster in csv format using write.option API from pyspark
-dataframe.
+• To do this we group the data by business and month and then sum the drivers earnings for each group.
+• Then, I downloaded this data into a local cluster in csv format using write.option API from pyspark dataframe.
 • Then, I used this csv file to visualize using Matplotlib.
+
 **2.4**
+
 • The data shows that uber has much more market share than Lyft.
 • Uber is a profitable company during these months in NYC.
 • Lyft is making huge losses in NYC in these months and the losses are increasing every month.
 • Lyft should think about pivoting their strategies in NYC at least.
 • Uber has been growing in these months and they need to continue doing what they’re doing.
+
 **Task 3: Top-K Processing:**
+
 **3.1 & 3.2**
+
 • For this problem we needed to fetch top 5 pickup and drop-off locations for each month. To solve this, we needed to get the count of trips being picked-up/dropped-off from each borough every month.
 • To achieve that, I used groupBy functions to make groups of months and trip counts for each borough that was used for pickup.
 • Then I used a window function to classify the data by month and sort them in descending order of trip count.
 • As we needed to show top 5 pickup locations for each month, I used the filter function to filter out top 5 results and display them.
 • Similar approach was used for picking up top 5 drop-off locations for each month.
+
 **3.3**
+
 • To calculate 30 earnest routes, I first added a route column by concatenating pickup borough with dropoff borough.
 • Then I grouped the whole data by making use of the above column by using groupby function.
 • And then I calculated each routes profit by adding the driver_total_pay for every route.
 • Then I sorted it in descending order and picked up the top 30 by using limit function.
+
 **3.4**
 
-From the results of this task, the following observations are made:
-• Most rideshare trips are to and from Manhattan (both most pickups and most drop-offs are from
-here)
-• The most profitable route is within Manhattan (i.e., from Manhattan to Manhattan); it’s almost
-double of the second most popular route
-• Also, the most popular routes are within the same borough. (Manhattan to Manhattan, Brooklyn to
-Brooklyn, Queens to Queens)
+• Most rideshare trips are to and from Manhattan (both most pickups and most drop-offs are from here)
+• The most profitable route is within Manhattan (i.e., from Manhattan to Manhattan); it’s almost double of the second most popular route.
+• Also, the most popular routes are within the same borough. (Manhattan to Manhattan, Brooklyn to Brooklyn, Queens to Queens)
+
 Potential Strategies:
-• From the observations, it looks like that most people in NY are using rideshares for shorter
-distances (within borough). We can maybe run some promos for users to use it for longer distances
-• The company is earning the most from Manhattan and the demand is also huge. So encourage
-more drivers to drive in Manhattan.
+
+• From the observations, it looks like that most people in NY are using rideshares for shorter distances (within borough). We can maybe run some promos for users to use it for longer distances.
+• The company is earning the most from Manhattan and the demand is also huge. So encourage more drivers to drive in Manhattan.
+
 **Task 4: Average of Data:**
+
 **4.1**
+
 • The task is to calculate the average of driver earnings during different times of the day.
 • For this, I grouped the results by time of the day and then calculated the average of the
 driver_total_pay for each time of the day and printed the results.
