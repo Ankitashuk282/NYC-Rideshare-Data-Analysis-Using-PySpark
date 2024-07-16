@@ -91,47 +91,62 @@ Potential Strategies:
 **4.1**
 
 • The task is to calculate the average of driver earnings during different times of the day.
-• For this, I grouped the results by time of the day and then calculated the average of the
-driver_total_pay for each time of the day and printed the results.
-• One method to calculate this was to sum driver_total_pay for a time of a day and then divide by the
-count to calculate average.
+• For this, I grouped the results by time of the day and then calculated the average of the driver_total_pay for each time of the day and printed the results.
+• One method to calculate this was to sum driver_total_pay for a time of a day and then divide by the count to calculate average.
 • But I have used the aggregate (agg) and average function to calculate the same.
+
 **4.2**
-• With the same approach as in 4.1, firstly I grouped the results by time of the day and then
-calculated the average of the trip length (average_trip_length).
+
+• With the same approach as in 4.1, firstly I grouped the results by time of the day and then calculated the average of the trip length (average_trip_length).
+
 **4.3**
-• I joined the resultant dataframes from previous results based on time of the day .
+
+• I joined the resultant dataframes from previous results based on time of the day.
 • Then I used that to calculate average earning per mile.
 • Average earning per mile is calculated as Total earning/Total miles.
+
 **Task 5: Finding anomalies:**
+
 **5.1**
+
 • Firstly, I filtered the data based on month and choose only data from January.
 • Then, I grouped the data by day and calculated average waiting time for each day.
 • Then I sorted the data by day for visualization.
 • I downloaded the dataframe to my own cluster in csv format and then to my local machine.
 • I combined all csv files into one and used Google colab and Matplotlib for creating the histogram.
+
 **5.2**
+
 • The only day when the average waiting time exceed 300 seconds was 1st January.
+
 **5.3**
+
 • The average waiting time was the longest on 1st January as it is New years day which is a Holiday and a lot of people go out on that day.
 • Since, people go out there’s also a lot of traffic which eventually increases wait time.
-• Also, a lot of people drink on that day which increases the demand of cabs, in turn increasing the
-average wait time.
+• Also, a lot of people drink on that day which increases the demand of cabs, in turn increasing the average wait time.
+
 **Task 6: Filtering Data:**
+
 **6.1**
+
 • In this task, we need to find the trip counts greater than 0 and less than 1000 for different 'Pickup_Borough' at different 'time_of_day'.
 • To achieve this, we grouped the data by pickup_location and time_of_day and then counted each group.
+
 **6.2**
+
 • This task was to calculate the number of trips for each Pickup Borugh in the evening time.
 • To do this, I filtered the data obtained from previous task and applied a filter to select “evening” as time of the day.
 • Then we grouped by Pickup_borough and displayed the results.
+
 **6.3**
+
 • This task was to calculate the number of trips from Brooklyn to Staten Island.
 • To do this, I applied two filters: one for pickup borough to be Brooklyn and second for dropoff borough to be Staten Island.
 • Then I selected the required columns according to the question and displayed the results.
+
 **Task 7: Routes Analysis:**
-• I analysed top 10 popular routes and to do so in terms of the trip count, I first created a new column to
-concatenate the Pickup_Zone and Dropoff_Zone into the format of ‘Pickup_Zone to Dropoff_Zone’.
+
+• I analysed top 10 popular routes and to do so in terms of the trip count, I first created a new column to concatenate the Pickup_Zone and Dropoff_Zone into the format of ‘Pickup_Zone to Dropoff_Zone’.
 • Then I aggregated the data to count the no. of trips taken for each unique route for both Uber and Lyft. I chose for both Uber and Lyft as it was required to show number of trips for both the companies along with the final count.
 • Then I summed these counts to get a total count per route.
 • In the final step, I determined the top 10 most popular routes by sorting them in descending order and selecting the top 10.
