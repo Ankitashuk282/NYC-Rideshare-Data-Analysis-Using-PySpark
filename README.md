@@ -14,19 +14,18 @@ Key Achievements in Rideshare Data Analysis Project:
   
 **Task 1: Merging datasets:**
 **1.1 & 1.2**
-• Firstly, I load the rideshare_data.csv and taxi_zone_lookup.csv using the path and file provided in the assignment and convert them into dataframes.
-• I tested with sample_data, and printed the results to verify that the data was loaded correctly.
-• The aim of this task is to add both pickup and dropoff details to the rideshare_data.
-• To achieve this, I joined the pickup details to the rideshare_data using pickup_location from
-rideshare_data and mapping it to the LocationID from taxi_zone_lookup data.
-• Now, to add the dropoff details to rideshare_data, I make another join to the dataframe obtained from
-the last step; but this time joining rideshare_data to taxi_zone_lookup_data on dropoff_location and
-LocationID.
-• For this task, I’m using the built-in ‘join’ function from PySpark.
-• Printed the new schema on console. (Screenshot attached for your reference)
+
+- Firstly, I load the rideshare_data.csv and taxi_zone_lookup.csv using the path and file provided in the assignment and convert them into dataframes.
+- I tested with sample_data, and printed the results to verify that the data was loaded correctly.
+- The aim of this task is to add both pickup and dropoff details to the rideshare_data.
+- To achieve this, I joined the pickup details to the rideshare_data using pickup_location from rideshare_data and mapping it to the LocationID from taxi_zone_lookup data.
+- Now, to add the dropoff details to rideshare_data, I make another join to the dataframe obtained from the last step; but this time joining rideshare_data to taxi_zone_lookup_data on dropoff_location and LocationID.
+- For this task, I’m using the built-in ‘join’ function from PySpark.
+-  Printed the new schema on console. (Screenshot attached for your reference)
+  
 **1.3**
-• To convert Unix timestamp to “yyyy-MM-dd” format, I’ve used from_unixtime method from the Pyspark.sql library. This is used to convert unixtime into a string of provided format
-• I did not convert the type from string to date as the only objective of the task is to convert unix time to “yyyy-MM-dd” format.
+- To convert Unix timestamp to “yyyy-MM-dd” format, I’ve used from_unixtime method from the Pyspark.sql library. This is used to convert unixtime into a string of provided format
+- I did not convert the type from string to date as the only objective of the task is to convert unix time to “yyyy-MM-dd” format.
 
 **Task 2: Aggregation on Data:**
 **2.1**
